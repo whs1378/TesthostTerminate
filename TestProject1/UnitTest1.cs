@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WinFormsApp1;
+using System.Data.OleDb;
 
 namespace TestProject1
 {
@@ -9,16 +9,16 @@ namespace TestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            Repository repository = new Repository();
-
-            bool rc = repository.Open();
-            Assert.IsTrue(rc);
+            OleDbConnection connection = new OleDbConnection(
+                "Provider = Microsoft.ACE.OLEDB.12.0;" +
+                $"Data Source=../../../../Database1.accdb");
+            connection.Open();
 
             //if connection is not closed, testhost.exe does not terminate
             //and holds test dlls failing build
 
-            //rc = repository.Close();
-            //Assert.IsTrue(rc);
+            //connection.Close();
+
         }
     }
 }

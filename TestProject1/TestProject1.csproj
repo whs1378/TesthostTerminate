@@ -12,10 +12,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\WinFormsApp1\WinFormsApp1.csproj" />
+    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
